@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    grafana_annotations (0.0.1)
+    grafana_annotations (http_health_check (0.1.0))
       dry-initializer
       dry-monads
       dry-struct

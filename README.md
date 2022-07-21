@@ -7,7 +7,7 @@ Add custom annotations to grafana from your ruby application.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'grafana_annotations', '~> 0.1.1'
+gem 'grafana_annotations', '~> 0.1.0'
 ```
 
 And then execute:
