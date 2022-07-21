@@ -27,6 +27,14 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
+  # TODO: Get rid of dry.rb and faraday dependencies
+  spec.add_dependency 'dry-initializer'
+  spec.add_dependency 'dry-monads'
+  spec.add_dependency 'dry-struct'
+  spec.add_dependency 'dry-types'
+  spec.add_dependency 'faraday', '~> 1.0'
+
   spec.add_development_dependency 'rspec', '~> 3.2'
   spec.add_development_dependency 'rubocop', '~> 0.81'
+  spec.add_development_dependency 'webmock'
 end
