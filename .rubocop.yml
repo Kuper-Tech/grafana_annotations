@@ -1,0 +1,13 @@
+AllCops:
+  TargetRubyVersion: 2.5
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - "spec/**/*.rb"
+    - "grafana_annotations.gemspec"
+
+Style/CommentedKeyword:
+  Enabled: false
