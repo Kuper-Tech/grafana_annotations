@@ -1,5 +1,7 @@
 # GrafanaAnnotations
 
+[![Gem Version](https://badge.fury.io/rb/grafana_annotations.svg)](https://badge.fury.io/rb/grafana_annotations)
+
 Add custom annotations to grafana from your ruby application.
 
 ## Installation
@@ -64,6 +66,7 @@ end
 ### Rake tasks instrumentation
 
 Just require `grafana_annotations/rake` within your Rakefile and annotation request will be sent for every rake task.
+
 ```ruby
 # Rakefile
 require 'grafana_annotations/rake'
