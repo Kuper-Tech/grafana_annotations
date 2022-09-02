@@ -4,7 +4,7 @@ module GrafanaAnnotations
   module Rake
     module Task
       def invoke(*args)
-        return super unless GrafanaAnnotations.config
+        return super unless GrafanaAnnotations.configured?
 
         text = [GrafanaAnnotations.config.rake_text_prefix, name].join(' ')
         text += " #{args.inspect}" unless args.empty?

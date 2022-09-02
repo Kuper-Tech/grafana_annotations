@@ -29,16 +29,22 @@ module GrafanaAnnotations
       raise ConfigurationError, e.message
     end
 
+    def configured?
+      config.is_a? GrafanaAnnotations::Config
+    end
+
     def default_api_client
       @default_api_client ||= begin
-        raise ConfigurationError, 'todo' unless config
+        unless configured?
+          raise ConfigurationError, 'Use GrafanaAnnotations.configure in initializer (see https://github.com/SberMarket-Tech/grafana_annotations#configuration)'
+        end
 
         new_api_client({})
       end
     end
 
     def new_api_client(opts)
-      return ApiClient.new(opts) unless config
+      return ApiClient.new(opts) unless configured?
 
       ApiClient.new(
         opts.merge(
