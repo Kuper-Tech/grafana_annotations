@@ -5,6 +5,28 @@ require 'spec_helper'
 describe GrafanaAnnotations do
   include Dry::Monads::Result::Mixin
 
+  describe '#configured?' do
+    context 'when configured' do
+      before do
+        GrafanaAnnotations.configure do |c|
+          c.grafana_base_url 'http://foo/url'
+        end
+      end
+
+      after { GrafanaAnnotations.instance_variable_set(:@config, nil) }
+
+      it 'return ture' do
+        expect(GrafanaAnnotations.configured?).to be_truthy
+      end
+    end
+
+    context 'when not configured' do
+      it 'return false' do
+        expect(GrafanaAnnotations.configured?).to be_falsey
+      end
+    end
+  end
+
   describe '#wrap' do
     context 'with custom api client' do
       let(:api_client) { GrafanaAnnotations::ApiClient.new(base_url: 'https://localhost:9091') }

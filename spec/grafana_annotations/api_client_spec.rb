@@ -11,7 +11,6 @@ describe GrafanaAnnotations::ApiClient do
     let(:url) { base_url + '/api/annotations' }
     let(:annotation) do
       GrafanaAnnotations::Annotation.new(
-        time: GrafanaAnnotations::Utils::Time.now_ms,
         tags: %w[stf rspec],
         text: 'Annotation Description'
       )

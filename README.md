@@ -47,7 +47,7 @@ end
 
 ```ruby
 result = GrafanaAnnotations.default_api_client.create(
-  time: GrafanaAnnotations::Utils::Time.now_ms, # timestamp in milliseconds (integer)
+  time: GrafanaAnnotations::Utils::Time.now_ms, # timestamp in milliseconds (integer), optional
   tags: [:my_app, :my_event],
   text: "Boom!"
 )
